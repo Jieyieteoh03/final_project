@@ -1,27 +1,23 @@
 <?php
-if( !isAdminOrEditor()()){
-header("Location: /home");
-exit;
-}
 
-$database = connectToDB();
+    $database = connectToDB();
 
-$sql ="SELECT
-replies.*,
-users.name,
-users.email
-FROM replies
-JOIN users
-ON replies.user_id = users.id
-JOIN posts
-ON replies.post_id = posts.id
-JOIN comments
-ON replies.comment_id = comments.id";
-$query = $database->prepare($sql);
-$query -> execute();
+    $sql ="SELECT
+    replies.*,
+    users.name,
+    users.email
+    FROM replies
+    JOIN users
+    ON replies.user_id = users.id
+    JOIN posts
+    ON replies.post_id = posts.id
+    JOIN comments
+    ON replies.comment_id = comments.id";
+    $query = $database->prepare($sql);
+    $query -> execute();
 
-//fetch
-$replies = $query->fetchAll();
+    //fetch
+    $replies = $query->fetchAll();
 
 
 
