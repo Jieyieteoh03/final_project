@@ -1,5 +1,5 @@
 <?php
-if( !isUserLoggedIn()){
+if( !isAdminOrEditor()()){
 header("Location: /home");
 exit;
 }
