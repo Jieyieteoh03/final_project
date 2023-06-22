@@ -26,7 +26,8 @@
 ?>
     <div class="container mx-auto my-5" style="max-width: 700px;">
         <div class="d-flex justify-content-between align-items-center mb-2">
-        <h1 class="h1">Manage Posts</h1>
+        <?php "parts/message_success.php"?>
+        <h1 class="h1 text-light">Manage Posts</h1>
         </div>
         <div class="card mb-2 p-4">
         <table class="table">
@@ -70,9 +71,6 @@
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="exampleModalLabel"><?= $post['title']; ?></h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body text-start">
-                                <?= $post['content']; ?>
                             </div>
                             </div>
                         </div>

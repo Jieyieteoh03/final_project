@@ -23,7 +23,7 @@
 ?>
     <div class="container mx-auto my-5" style="max-width: 700px;">
       <div class="d-flex justify-content-between align-items-center mb-2">
-        <h1 class="h1">Manage Users</h1>
+        <h1 class="h1 text-light">Manage Users</h1>
         <div class="text-end">
           <a href="/manage-users-add" class="btn btn-primary btn-sm"
             >Add New User</a

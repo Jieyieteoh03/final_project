@@ -31,11 +31,13 @@
 ?>
 
   <div class="container mx-auto my-5" style="max-width: 500px;">
-        <h1 class="h1 mb-4 text-center">Comment</h1>
-        <p><?= $comment['comments']; ?></p>
+        <?php require "parts/message_error.php"; ?>
+        <?php require "parts/message_success.php"; ?>
+        <h1 class="h1 mb-4 text-center text-light">Comment</h1>
+        <p class="text-light"><?= $comment['comments']; ?></p>
         <!-- reply -->
         <div class="mt-3">
-            <h4>Reply</h4>
+            <h4 class="text-light">Reply</h4>
             <?php
                 $sql ="SELECT
                 replies.*,
@@ -59,7 +61,6 @@
               foreach ($replies as $reply) :
             ?>
             <div class="card mt-2 <?php echo ( $reply["user_id"] === $_SESSION['user']['id'] ? "bg-secondary-subtle" : '' ); ?>">
-              <?php require "parts/message_error.php"; ?>
                 <div class="card-body">
                     <p class="card-text"><?= $reply['reply']; ?></p>
                     <p class="card-text"><small class="text-muted" style="font-size: 10px;" >Reply by <?= $reply['name']; ?></small></p>

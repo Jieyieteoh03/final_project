@@ -1,7 +1,7 @@
 <?php
 
     // // check if the current user is an admin or not
-    if ( !isAdmin() ) {
+    if ( !isAdminOrEditor() ) {
         // if current user is not an admin, redirect to dashboard
         header("Location: /home");
         exit;
@@ -36,7 +36,7 @@
     ]);
 
     // set success message
-    $_SESSION["success"] = "Post has been deleted.";
+    $_SESSION["success"] = "Comment has been deleted.";
 
     // redirect
     header("Location: /manage-comments");

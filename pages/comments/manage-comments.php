@@ -27,8 +27,9 @@ require "parts/header.php"
 
 ?>
 <div class="container mx-auto my-5" style="max-width: 700px;">
+    <?php require "parts/message_success.php"?>
     <div class="d-flex justify-content-between align-items-center mb-2">
-    <h1 class="h1">Manage Comments</h1>
+    <h1 class="h1 text-light">Manage Comments</h1>
     </div>
     <div class="card mb-2 p-4">
     <table class="table">
@@ -69,14 +70,11 @@ require "parts/header.php"
                     <div class="modal fade" id="comment-modal-<?= $comment['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel"><?= $comment['comments']; ?></h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-start">
-                            <?= $comment['comments']; ?>
-                        </div>
-                        </div>
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel"><?= $comment['comments']; ?></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                        </div> 
                     </div>
                     </div>
                     <!-- Delete button trigger modal -->

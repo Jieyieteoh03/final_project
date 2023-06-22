@@ -7,7 +7,7 @@
 
   $database = connectToDB();
 
-  $sql = "SELECT * FROM posts";
+  $sql = "SELECT * FROM posts ORDER BY id DESC";
   $query = $database->prepare( $sql );
   $query->execute();
   // fetch
@@ -54,7 +54,6 @@
         </div>
       <?php endif; ?>
       <div class="post-content px-3">
-        <!-- <h4 class="h4 mb-4 text-start"><?= $_SESSION["user"]["name"]; ?></h4> -->
         <h1 class="h1 mb-4 text-start"><?=$post['title']; ?></h1>
         <p><?= $post['content']; ?></p>
         <?php if ( $post['image'] ) : ?>

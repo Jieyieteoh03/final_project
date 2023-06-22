@@ -14,6 +14,22 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $id = $_POST['id'];
+    $profile_image = $_POST['profile_image'];
+
+    // catch the image file
+    $image = $_FILES['image'];
+    // get image file name
+    $image_name = $image['name'];
+
+    // add image to the uploads folder
+    if ( !empty( $image_name ) ) {
+        // target the uploads folder
+        $target_dir = "uploads-profile/";
+        // add the image name to the uploads folder
+        $target_file = $target_dir . basename( $image_name ); // output: uploads/fs.jpg
+        // move the file to the uploads folder
+        move_uploaded_file( $image["tmp_name"], $target_file );
+    }
 
     /* 
         do error check
@@ -29,7 +45,7 @@
     $query = $database->prepare($sql);
     $query->execute([
         'email'=>$email,
-        'id' => $id
+        'id' => $_SESSION["user"]["id"]
     ]);
     $user = $query->fetch();
     
@@ -44,12 +60,13 @@
         exit;
     }   
     // if no error found, update the user data based whatever in the $_POST data
-    $sql = "UPDATE users SET name = :name, email = :email WHERE id = :id";
+    $sql = "UPDATE users SET name = :name, email = :email , image = :image WHERE id = :id";
     $query = $database->prepare($sql);
     $query->execute([
         'name' => $name,
         'email' => $email,
-        'id' => $id
+        'id' => $_SESSION["user"]["id"],
+        'image' => ( !empty( $image_name ) ? $image_name : ( !empty( $profile_image ) ? $profile_image : null ) ),
     ]);
 
     // set success message

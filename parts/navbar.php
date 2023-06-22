@@ -1,21 +1,17 @@
-<nav class="navbar navbar-expand-lg bg-dark bg-opacity-25">
+<nav class="navbar navbar-expand-lg bg-danger bg-opacity-75">
   <div class="container-fluid">
         
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand text-light" href="/home">
             <img src="/includes/assets/images/cat-image2.png" alt="fs logo" style="width: 50px;">
             Discat
         </a>
         <div class="d-flex">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/home">Home</a>
-                    </li>
-                    
-                        <a href="/profile">
-                            <button type="button" class="btn btn-primary me-1">
-                                <i class="bi bi-person-circle"></i>
-                            </button>
-                        </a>
+                    <a href="/profile">
+                        <button type="button" class="btn btn-primary me-1">
+                            <i class="bi bi-person-circle"></i>
+                        </button>
+                    </a>
                 </ul>
             <!-- Login and logout -->
             <?php if(isUserLoggedIn()) {?>

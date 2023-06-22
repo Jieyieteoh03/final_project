@@ -4,27 +4,19 @@
     exit;
   }
   // make sure the id parameter in the url is belongs to a valid user in the database
-  if ( isset( $_GET['id'] ) ) {
+  
 
     $database = connectToDB();
 
     $sql = "SELECT * FROM users WHERE id = :id";
     $query = $database->prepare( $sql );
     $query->execute([
-        'id' => $_GET['id']
+        'id' => $_SESSION['user']['id']
     ]);
 
     $user = $query->fetch();
 
-    if (!$user) {
-      header("Location:/profile");
-      exit;
-    }
 
-  } else {
-    header("Location: /profile");
-    exit;
-  }
   require "parts/header.php";
 ?>
     <div class="container mx-auto my-5" style="max-width: 700px;">

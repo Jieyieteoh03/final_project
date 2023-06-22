@@ -34,6 +34,8 @@
         ]);
     }
 
+        $_SESSION["success"] = "Reply has been added";
+
         
         header("Location: /replies?id=$comment_id" );
         exit;
