@@ -23,9 +23,6 @@
         case 'users/delete':
             require "includes/users/delete.php";
             break;
-        case 'users/changepwd':
-            require "includes/users/changepwd.php";
-            break;
         case 'posts/add':
             require "includes/posts/add.php";
             break;
@@ -43,6 +40,9 @@
             break;
         case 'profile/edit':
             require "includes/profile/edit.php";
+            break;
+        case 'profile/changepwd':
+            require "includes/profile/changepwd.php";
             break;
         case 'replies/add':
             require "includes/replies/add.php";
@@ -81,14 +81,14 @@
             $_SESSION["title"] = "Add New User";
             require "pages/users/manage-users-add.php";
             break;
-        case 'manage-users-changepwd':
-            require "pages/users/manage-users-changepwd.php";
-            break;
         case 'manage-users-edit':
             require "pages/users/manage-users-edit.php";
             break;
         case 'manage-profile-edit';
             require "pages/profile/manage-profile-edit.php";
+            break;
+        case 'manage-profile-changepwd';
+            require "pages/profile/manage-profile-changepwd.php";
             break;
         case 'manage-comments';
             require "pages/comments/manage-comments.php";

@@ -1,9 +1,9 @@
 <?php
 
-    // check if the current user is an admin or not
+ 
     if ( !isUserLoggedIn() ) {
-        // if current user is not an admin, redirect to dashboard
-        header("Location: /home");
+        
+        header("Location: /");
         exit;
     }
 

@@ -16,14 +16,13 @@
 
     $user = $query->fetch();
 
-    // if is not a valid user, redirect back to /manage-users
     if (!$user) {
-      header("Location:/manage-users");
+      header("Location:/profile");
       exit;
     }
 
   } else {
-    header("Location: /manage-users");
+    header("Location: /profile");
     exit;
   }
   require "parts/header.php";
@@ -41,7 +40,7 @@
           4. pass in id as input hidden field
           5. add the error message
         -->
-        <form method="POST" action="/users/changepwd">
+        <form method="POST" action="/profile/changepwd">
           <?php require "parts/message_error.php";?>
           <div class="mb-3">
             <div class="row">
@@ -71,8 +70,8 @@
         </form>
       </div>
       <div class="text-center">
-        <a href="/manage-users" class="btn btn-link btn-sm"
-          ><i class="bi bi-arrow-left"></i> Back to Users</a
+        <a href="/manage-profile-edit" class="btn btn-link btn-sm"
+          ><i class="bi bi-arrow-left"></i>Edit profile</a
         >
       </div>
     </div>

@@ -35,11 +35,19 @@
             </div>   
         </form>
         <!-- Direct to signup page -->
-        <p class="pt-4 text-end">
-            <a href="/signup">
-                No account? Sign up here! <i class="bi bi-arrow-right-circle"></i>
-            </a>                            
-        </p>
+        <div class="d-flex">
+            <p class="pt-4 text-start">
+                <a href="/">
+                    <i class="bi bi-arrow-left-circle">Back to main page</i>
+                </a>                            
+            </p>
+            <div class="col-2"></div>
+            <p class="pt-4 text-end">
+                <a href="/signup">
+                    No account? Sign up here! <i class="bi bi-arrow-right-circle"></i>
+                </a>                            
+            </p>
+        </div>
     </div>
 </div>
 

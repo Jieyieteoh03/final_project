@@ -10,7 +10,7 @@
     <div class="container my-5 mx-auto" style="max-width: 500px;">
         <div class="text-end">
             <a href="/manage-profile-edit">
-                <button type="button" class="btn btn-success ms-3">
+                <button type="button" class="btn btn-primary ms-3">
                     Edit profile
                 </button>
             </a>
@@ -39,17 +39,8 @@
             </div>    
         </div>
 
-        <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
-            <textarea 
-                class="form-control" 
-                id="exampleFormControlTextarea1" 
-                rows="3">
-            </textarea>      
-        </div>
-
         <div class="text-center">
-            <a href="/" class="btn btn-link btn-sm"
+            <a href="/home" class="btn btn-link btn-sm"
             ><i class="bi bi-arrow-left pe-2"></i>Back</a
             >
       </div>

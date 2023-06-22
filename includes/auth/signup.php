@@ -31,7 +31,17 @@ if(empty($name) || empty($email) || empty($password) || empty($confirm_password)
         'email' => $email,
         'password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
+
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $query = $database->prepare($sql);
+    $query->execute([
+        'email' => $email
+    ]);
+    $user = $query->fetch();
+
     $_SESSION["user"] = $user;
+
+
 
     header("Location: /home");
     exit;

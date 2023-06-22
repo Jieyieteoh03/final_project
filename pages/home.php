@@ -54,13 +54,14 @@
         </div>
       <?php endif; ?>
       <div class="post-content px-3">
+        <!-- <h4 class="h4 mb-4 text-start"><?= $_SESSION["user"]["name"]; ?></h4> -->
         <h1 class="h1 mb-4 text-start"><?=$post['title']; ?></h1>
+        <p><?= $post['content']; ?></p>
         <?php if ( $post['image'] ) : ?>
         <div class="text-center">
-            <img src="uploads/<?= $post['image']; ?>" class="img-fluid" />
+            <img src="uploads/<?= $post['image']; ?>" class="img-fluid" style="max-width: 300px;"/>
         </div>
         <?php endif; ?>
-        <p><?= $post['content']; ?></p>
       </div>
 
       <div class="comment">

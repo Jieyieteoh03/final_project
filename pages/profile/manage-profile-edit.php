@@ -6,19 +6,6 @@
 
     $database = connectToDB();
 
-    // $sql = "SELECT 
-    // users.* ,
-    // users.name,
-    // users.email
-    // FROM users
-    // JOIN users
-    // ON posts.user_id = users.id";
-    // $query = $database->prepare( $sql );
-    // $query->execute();
-
-    // // fetch
-    // $posts = $query->fetch();
-
     require "parts/header.php"
 ?>
     <div class="container my-5 mx-auto" style="max-width: 500px;">
@@ -28,9 +15,8 @@
                 <label for="exampleFormControlInput1" class="form-label">Username</label>
                 <input type="text" 
                 class="form-control" 
-                id="username" 
-                name="username"
-                placeholder="<?= $_SESSION['user']['name']?>"
+                id="name" 
+                name="name"
                 >
             </div>
             
@@ -40,17 +26,7 @@
                 class="form-control" 
                 id="email"
                 name="email" 
-                placeholder="<?= $_SESSION['user']['name']?>"
                 >
-            </div>
-            
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
-                    <textarea 
-                        class="form-control" 
-                        id="exampleFormControlTextarea1" 
-                        rows="3">
-                    </textarea>      
             </div>
 
             <div class="mb-3">
@@ -59,15 +35,17 @@
                     class="form-control" 
                     id="password"
                     name="password" 
-                    placeholder=""
                     > 
-
-                    <a href="/manage-profile-changepwd">Change password?</a> 
             </div>
+            <a href="/manage-profile-changepwd">Change password?</a> 
 
-            <div class="pt-4 d-grid">
+            <div class="pt-4 d-grid d-flex">
                 <a href="/profile">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-primary me-2">Back</button>
+                </a>
+            
+                <a href="/profile">
+                    <button type="submit" class="btn btn-success">Update</button>
                 </a>
             </div> 
         </form>

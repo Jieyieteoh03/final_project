@@ -14,14 +14,13 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $id = $_POST['id'];
-    $bio = $_POST['bio'];
 
     /* 
         do error check
         - make sure all the fields are not empty
         - make sure the *new* email entered is not duplicated
     */
-    if(empty($name) || empty($email) || empty($id)){
+    if(empty($name) || empty($email) || empty($id) ){
         $error = "Make sure all the fields are filled.";
     }
     
@@ -41,22 +40,21 @@
     // if error found, set error message & redirect back to the manage-users-edit page with id in the url
     if ( isset( $error ) ) {
         $_SESSION['error'] = $error;
-        header("Location: /manage-users-edit?id=$id");
+        header("Location: /manage-profile-edit?id=$id");
         exit;
     }   
     // if no error found, update the user data based whatever in the $_POST data
-    $sql = "UPDATE users SET name = :name, email = :email, role = :role WHERE id = :id";
+    $sql = "UPDATE users SET name = :name, email = :email WHERE id = :id";
     $query = $database->prepare($sql);
     $query->execute([
         'name' => $name,
         'email' => $email,
-        'role' => $role,
         'id' => $id
     ]);
 
     // set success message
-    $_SESSION["success"] = "user has been edited.";
+    $_SESSION["success"] = "User has been edited.";
 
     // redirect
-    header("Location: /manage-users");
+    header("Location: /profile");
     exit;

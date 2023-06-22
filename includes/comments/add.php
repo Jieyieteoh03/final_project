@@ -19,7 +19,7 @@
     // insert the comment into database
     if( isset ($error)){
         $_SESSION['error'] = $error;
-        header("Location: /post?id=$post_id" ); 
+        header("Location: /home?id=$post_id" ); 
         exit;
     }else{
         $sql = "INSERT INTO comments (`comments`, `post_id`, `user_id`)
@@ -32,7 +32,8 @@
         ]);
     }
 
+    $_SESSION["success"] = "New comment added";
         
-        header("Location: /post?id=$post_id" );
-        exit;
+    header("Location: /home?id=$post_id" );
+    exit;
 ?>

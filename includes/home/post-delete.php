@@ -21,7 +21,7 @@ if ( !isUserLoggedIn() ) {
     // if error found, set error message & redirect back to the manage-users page
     if ( isset( $error ) ) {
         $_SESSION['error'] = $error;
-        header("Location: /home");
+        header("Location: /home?id=$post_id");
         exit;
     }
 
@@ -36,5 +36,5 @@ if ( !isUserLoggedIn() ) {
     $_SESSION["success"] = "Post has been deleted.";
 
     // redirect
-    header("Location: /home");
+    header("Location: /home?id=$post_id");
     exit;
